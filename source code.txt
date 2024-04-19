@@ -1,0 +1,20 @@
+@echo off
+title MakeBatchFileBy_BFSGX
+
+::Text_Version::
+echo MakeBatchFileBy_BFSGX V0.1 2024.4.19
+echo ------------------------------------
+::End_Version::
+
+::Program::
+:start
+cls
+set /p FLNM=Your Batch File Name: 
+if /i not %FLNM%==  (goto next) else (goto start)
+:next 
+cls
+set /p ASK=Are You Sure (Y[N])?: 
+if /i %ASK%==y,Y echo >%FLNM%.bat
+if /i %ASK%==n.N exit
+if /i not %ASK%==y,Y,n,N exit
+::End_Program::
